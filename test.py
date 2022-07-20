@@ -1,4 +1,9 @@
-list = range(1,11)
-for x in list:
-    print(x)
+x = 0
+y = 0
 
+input(x)
+input(y)
+
+list = range(x,y)
+for i in list:
+    print(i)

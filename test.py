@@ -1,9 +1,10 @@
-x = 0
-y = 0
 
-input(x)
-input(y)
+print('voer een heel getal in:')
 
-list = range(x,y)
+x = input()
+y = input()
+
+list = range(int(x),int(y))
 for i in list:
     print(i)
+

@@ -1,8 +1,8 @@
 import pygame
 pygame.init()
-dis=pygame.display.set_mode((400,300))
+dis=pygame.display.set_mode((800,600))
 pygame.display.update()
-pygame.display.set_caption('Snake game by Edureka')
+pygame.display.set_caption('SNOK')
 game_over=False
 while not game_over:
     for event in pygame.event.get():

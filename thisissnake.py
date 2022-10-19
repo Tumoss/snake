@@ -26,5 +26,39 @@ while not game_over:
  
 frames = pygame.time.Clock() # fps
 
+snake_positie = [100, 50]
+ 
+snake_body = [  [100, 50],
+                [90, 50],
+                [80, 50],
+                [70, 50]
+            ]
+
+blokje_locatie = [random.randrange(1, (window_x//10)) * 10,
+                  random.randrange(1, (window_y//10)) * 10]
+fruit_spawn = True
+ 
+
+richting = 'RIGHT'
+verander_naar = richting
+
+score = 0
+
+def game_over():
+   
+    my_font = pygame.font.SysFont('times new roman', 50)
+     
+    game_over_surface = my_font.render(
+        'Your Score is : ' + str(score), True, red)
+     
+    game_over_rect = game_over_surface.get_rect()
+     
+    game_over_rect.midtop = (window_x/2, window_y/4)
+     
+    game_window.blit(game_over_surface, game_over_rect)
+    pygame.display.flip()
+     
+    time.sleep(2)
+
 pygame.quit()
 quit()

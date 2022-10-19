@@ -5,8 +5,8 @@ import random
  
 snake_snelheid = 10
  
-window_x = 720
-window_y = 480
+window_x = 500
+window_y = 500
  
 black = pygame.Color(0, 0, 0)
 white = pygame.Color(255, 255, 255)

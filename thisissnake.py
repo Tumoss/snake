@@ -35,9 +35,12 @@ fruit_locatie = [random.randrange(1, (window_x//10)) * 10,
 fruit_spawn = True
  
 
+
 richting = 'RIGHT'
 verander_richting = richting
  
+
+score=0
 
 def game_over():
    
@@ -92,10 +95,25 @@ while True:
     if richting == 'RIGHT':
         snake_positie[0] += 10
  
-   
+    snake_body.insert(0, list(snake_positie))
+    if snake_positie[0] == fruit_locatie[0] and snake_positie[1] == fruit_locatie[1]:
+        score += 10
+        fruit_spawn = False
+    else:
+        snake_body.pop()
+         
+    if not fruit_spawn:
+        fruit_locatie = [random.randrange(1, (window_x//10)) * 10,
+                          random.randrange(1, (window_y//10)) * 10]
+         
+    fruit_spawn = True
+    game_window.fill(black)
+
     for pos in snake_body:
         pygame.draw.rect(game_window, green,
                          pygame.Rect(pos[0], pos[1], 10, 10))
+        pygame.draw.rect(game_window, white, pygame.Rect(
+        fruit_locatie[0], fruit_locatie[1], 10, 10))                 
 
  
     if snake_positie[0] < 0 or snake_positie[0] > window_x-10:
